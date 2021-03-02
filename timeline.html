@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/knyttneve/pen/bgvmma/">
+
+  
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+.timeline {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 700px;
+  position: relative;
+}
+.timeline__content-title {
+  font-weight: normal;
+  font-size: 66px;
+  margin: -10px 0 0 0;
+  transition: 0.4s;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-family: "Pathway Gothic One", sans-serif;
+  color: #fff;
+}
+.timeline__content-desc {
+  margin: 0;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Cardo;
+  font-weight: normal;
+  line-height: 25px;
+}
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  content: "";
+  background: rgba(255, 255, 255, 0.07);
+}
+@media only screen and (max-width: 767px) {
+  .timeline:before {
+    left: 40px;
+  }
+}
+.timeline-item {
+  padding: 40px 0;
+  opacity: 0.3;
+  filter: blur(2px);
+  transition: 0.5s;
+  box-sizing: border-box;
+  width: calc(50% - 40px);
+  display: flex;
+  position: relative;
+  transform: translateY(-80px);
+}
+.timeline-item:before {
+  content: attr(data-text);
+  letter-spacing: 3px;
+  width: 100%;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-family: "Pathway Gothic One", sans-serif;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  top: 70%;
+  margin-top: -5px;
+  padding-left: 15px;
+  opacity: 0;
+  right: calc(-100% - 56px);
+}
+.timeline-item:nth-child(even) {
+  align-self: flex-end;
+}
+.timeline-item:nth-child(even):before {
+  right: auto;
+  text-align: right;
+  left: calc(-100% - 56px);
+  padding-left: 0;
+  border-left: none;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  padding-right: 15px;
+}
+.timeline-item--active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+.timeline-item--active:before {
+  top: 50%;
+  transition: 0.3s all 0.2s;
+  opacity: 1;
+}
+.timeline-item--active .timeline__content-title {
+  margin: -50px 0 20px 0;
+}
+@media only screen and (max-width: 767px) {
+  .timeline-item {
+    align-self: baseline !important;
+    width: 100%;
+    padding: 0 30px 150px 80px;
+  }
+  .timeline-item:before {
+    left: 10px !important;
+    padding: 0 !important;
+    top: 50px;
+    text-align: center !important;
+    width: 60px;
+    border: none !important;
+  }
+  .timeline-item:last-child {
+    padding-bottom: 40px;
+  }
+}
+.timeline__img {
+  max-width: 100%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+.timeline-container {
+  width: 100%;
+  position: relative;
+  padding: 80px 0;
+  transition: 0.3s ease 0s;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.timeline-container:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(99, 99, 99, 0.8);
+  content: "";
+}
+.timeline-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+.timeline-header__title {
+  color: #fff;
+  font-size: 46px;
+  font-family: Cardo;
+  font-weight: normal;
+  margin: 0;
+}
+.timeline-header__subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 16px;
+  letter-spacing: 5px;
+  margin: 10px 0 0 0;
+  font-weight: normal;
+}
+
+.demo-footer {
+  padding: 60px 0;
+  text-align: center;
+}
+.demo-footer a {
+  color: #999;
+  display: inline-block;
+  font-family: Cardo;
+}
+  </style>
+
+  
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-7f4d47902dc785f30dedcac9c996b9f31d4dfcc33567cc48f0431bc918c2bf05.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-bb9a2ba1f03f6147732cb3cd52ac86c6b24524aa87a05ed0b726f11e46d7e277.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+</head>
+
+<body>
+  
+<div class="timeline-container" id="timeline-1">
+  <div class="timeline-header">
+    <h2 class="timeline-header__title">Intellectual Property Timeline</h2>
+    <h3 class="timeline-header__subtitle">1700 to 1900</h3>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item" data-text="THE CONSTITUTION">
+      <div class="timeline__content"><img class="timeline__img" src="https://cdn.cnn.com/cnnnext/dam/assets/130306205822-the-bill-of-rights.jpg"/>
+        <h2 class="timeline__content-title">1787</h2>
+        <p class="timeline__content-desc">The 1787 U.S. Constitution laid the groundwork for granting patent rights to inventors in Article One, section 8, clause 8.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="PATENT ACT">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">1790</h2>
+        <p class="timeline__content-desc">A year after the constitution was ratified came America’s first Patent Act, on April 10, 1790.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="THE FIRST PATENT">
+      <div class="timeline__content"><img class="timeline__img" src="https://i.etsystatic.com/10464274/r/il/2399e6/802730870/il_fullxfull.802730870_r1ve.jpg"/>
+        <h2 class="timeline__content-title">1790</h2>
+        <p class="timeline__content-desc">On July 31, 1790, the First US Patent issued to Samuel Hopkins for an improvement "in the making Pot ash and Pearl ash by a new Apparatus and Process."</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="COPYRIGHT ACT OF 1790">
+      <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/en/a/a1/Newspaper_advert_copyright_patent_and_trade_mark.jpg"/>
+        <h2 class="timeline__content-title">1790</h2>
+        <p class="timeline__content-desc">The Copyright Act of 1790 granted American authors the right to print, re-print, or publish their work for a period of 14 years and to renew for another fourteen.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="WHEATEN V. PETERS">
+      <div class="timeline__content"><img class="timeline__img" src="https://ia802709.us.archive.org/view_archive.php?archive=/31/items/olcovers659/olcovers659-L.zip&amp;file=6593040-L.jpg&amp;ext="/>
+        <h2 class="timeline__content-title">1834</h2>
+        <p class="timeline__content-desc">Wheaten v. Peters: involved the official reporter of U.S. Supreme Court decisions republishing the previous reporter's work. The opinion by Justice McLean emphasized that patents and copyrights are exclusive works of limited duration.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="USPTO IS FORMED">
+      <div class="timeline__content"><img class="timeline__img" src="https://mpep.uspto.gov/RDMS/MPEP/graphics/e8r9/seals.png"/>
+        <h2 class="timeline__content-title">1836</h2>
+        <p class="timeline__content-desc">The USPTO is created for the first time, then named the U.S. Patent Office. </p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="FOLSOM V. MARSH">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">1841</h2>
+        <p class="timeline__content-desc">In Folsom v. Marsh, the owner of a collection of George Washington’s letters sued Charles Upham for using letters in their entirety in a volume on Washington's life. The Supreme Court's definition of what constituted a “justifiable use of the original materials” formed the basis of the “fair use” doctrine.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="COMMERCE CLAUSE">
+      <div class="timeline__content"><img class="timeline__img" src="https://cdn.britannica.com/91/132291-050-4A304F97/horse-wagon-Interstate-Commerce-Traffic-Only-1900.jpg"/>
+        <h2 class="timeline__content-title">1881</h2>
+        <p class="timeline__content-desc">Trademark legislation is passed based on commerce clause of the Constitution. Provision is made for the registration of trademarks to be used in commerce with foreign nations and with the Indian tribes. No provision is made for interstate commerce.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="FIRST INTERNATIONAL TRADEMARK AGREEMENT">
+      <div class="timeline__content"><img class="timeline__img" src="https://www.wipo.int/export/sites/www/about-wipo/images/history/i_000022999605_600.jpg"/>
+        <h2 class="timeline__content-title">1883</h2>
+        <p class="timeline__content-desc">First international trademark agreement was reached at the Paris Convention for the Protection of Industrial Property. The countries involved in this convention agreed to provide the same protections regarding marks that they provide to their own nationals.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="PHOTOGRAPHS CAN BE COPYRIGHTED">
+      <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Oscar_Wilde_Sarony.jpg/150px-Oscar_Wilde_Sarony.jpg"/>
+        <h2 class="timeline__content-title">1884</h2>
+        <p class="timeline__content-desc">The Supreme Court concluded that photographs could be copyrighted. (Burrow-Giles Lithographic Co. v. Sarony, 111 U.S. 53 (1884)). Pictured is the subject of the lawsuit, Oscar Wilde No. 18 by Napoleon Sarony (1882).</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="BERNE CONVENTION">
+      <div class="timeline__content"><img class="timeline__img" src="https://pbs.twimg.com/media/DmpmDoaWwAEiT0L.jpg"/>
+        <h2 class="timeline__content-title">1884</h2>
+        <p class="timeline__content-desc">While the U.S. became a signatory in 1988, the Berne Convention provided for international recognition of copyright.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="COCA-COLA TRADEMARKED">
+      <div class="timeline__content"><img class="timeline__img" src="http://trademarkologist.lexblogplatformtwo.com/files/2013/11/Slide15.jpg"/>
+        <h2 class="timeline__content-title">1887</h2>
+        <p class="timeline__content-desc">Coca-cola is trademarked.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="QUAKER AND THE ROAD ENGINE">
+      <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/George_B_Selden_Road_engine_Pat_549%2C160_drawing.png/250px-George_B_Selden_Road_engine_Pat_549%2C160_drawing.png"/>
+        <h2 class="timeline__content-title">1895</h2>
+        <p class="timeline__content-desc">In the same year that Quaker Oats became a trademark, the “road engine automobile” was patented.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="demo-footer"><a href="http://www.turkishnews.com/Ataturk/life.htm" target="_blank">Source/Kaynak</a></div>
+  
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script  src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-90861131-3823-618a-8bcb-30f9b5744c46" crossorigin></script>
+</body>
+
+</html>
+
